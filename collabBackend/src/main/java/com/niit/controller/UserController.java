@@ -134,9 +134,6 @@ public class UserController {
 		}
 		return new ResponseEntity<Userdetails>(userdetails,HttpStatus.OK);
 	}
-	
-	
-	
 	//logout method
 	@RequestMapping(value="/user/logout/",method=RequestMethod.GET)
 	public ResponseEntity<Userdetails> logout(HttpSession session)
@@ -146,7 +143,7 @@ public class UserController {
 
 		userdetails= userdetailsDAO.authenticate(loggedInUser.getUserid(), loggedInUser.getPassword());
 		
-		/*userdetails= userdetailsDAO.authenticate(userdetails.getUserid(), userdetails.getPassword());*/
+		userdetails= userdetailsDAO.authenticate(userdetails.getUserid(), userdetails.getPassword());
 		friendDAO.setOffLine(loggedInUser.getUserid());
 		userdetailsDAO.setOffLine(loggedInUser.getUserid());
 		session.invalidate();

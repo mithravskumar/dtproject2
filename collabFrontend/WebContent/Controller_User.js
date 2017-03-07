@@ -42,6 +42,11 @@ app
 															.error('Error while fetching Users');
 												});
 							};
+						/*	//self.isloggedin
+							self.isLoggedIn= function(){
+								$scope.loggenIn=false;
+								
+							}*/
 							
 							//self.fatchAllUsers();
 
@@ -130,7 +135,7 @@ app
 							};
 
 							self.logout = function() {
-								console.log("logout")
+								console.log("logout in UserController")
 								$rootScope.currentUser = {};
 								$cookieStore.remove('currentUser');
 								UserService.logout()
@@ -154,8 +159,7 @@ app
 
 							self.login = function() {
 								{
-									console.log('login validation????????',
-											self.Userdetails);
+									console.log('login validation????????',	self.Userdetails);
 									self.authenticate(self.Userdetails);
 								}
 

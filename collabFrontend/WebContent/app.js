@@ -8,16 +8,20 @@ app.config(function($routeProvider) {
     controller  : 'HomeController'
   })
 .when('/chat', {
-    templateUrl : 'c_chat/chat.html',
+    templateUrl : 'chat/chat.html',
     controller  : 'ChatController'
+  })
+  .when('/view_blog', {
+    templateUrl : 'blog/view_blog.html',
+    controller  : 'BlogController'
   })
  
   .when('/list_blog', {
-    templateUrl : 'c_blog/list_blog.html',
+    templateUrl : 'blog/list_blog.html',
     controller  : 'BlogController'
   })
   .when('/create_blog', {
-    templateUrl : 'c_blog/create_blog.html',
+    templateUrl : 'blog/create_blog.html',
     controller  : 'BlogController'
   })
 
@@ -38,11 +42,25 @@ app.config(function($routeProvider) {
     controller  : 'UserController'
   })
   .when('/search_friend', {
-    templateUrl : 'c_friends/search_friend.html',
+    templateUrl : 'friends/search_friend.html',
     controller  : 'FriendController'
   })
-
-
+.when('/view_friend', {
+    templateUrl : 'friends/view_friend.html',
+    controller  : 'FriendController'
+  })
+  .when('/request_friend', {
+    templateUrl : 'friends/request_friend.html',
+    controller  : 'FriendController'
+  })
+.when('/post_job', {
+    templateUrl : 'job/post_job.html',
+    controller  : 'FriendController'
+  })
+  .when('/search_job', {
+    templateUrl : 'job/search_job.html',
+    controller  : 'FriendController'
+  })
   .otherwise({redirectTo: '/'});
 });
 

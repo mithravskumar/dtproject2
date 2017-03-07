@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 @Table(name="Friend")
 public class Friend extends BaseDomain {
 
-	@Id
 	
+	@Id
 	private String id;
 	private String userid;
 	private String friendid;
