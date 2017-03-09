@@ -32,6 +32,7 @@ app
 										.then(
 												function(d) {
 													self.blogs = d;
+													
 												},
 												function(errResponse) {
 													console
@@ -45,8 +46,11 @@ app
 								console.log("createUser...")
 								BlogService
 										.createBlog(Blog)
+										
 										.then(
-												self.fetchAllUsers,
+												function(d){
+													alert("blog created successfully")		
+												}	,											 
 												function(errResponse) {
 													console
 															.error('Error while creating Blog.');

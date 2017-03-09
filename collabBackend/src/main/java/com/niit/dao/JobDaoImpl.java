@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Job;
 
@@ -15,6 +17,11 @@ public class JobDaoImpl implements JobDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	public JobDaoImpl(SessionFactory sessionFactory)
+	{
+	this.sessionFactory = sessionFactory;
+	}
 	
 	public void postJob(Job job) {
 		Session session=sessionFactory.openSession();

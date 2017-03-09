@@ -29,6 +29,7 @@ app.factory('BlogService', ['$http', '$q','$rootScope', function($http, $q,$root
                             .then(
                                     function(response){
                                         return response.data;
+                                       
                                     }, 
                                     function(errResponse){
                                         console.error('Error while creating user');

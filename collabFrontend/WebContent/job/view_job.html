@@ -1,6 +1,6 @@
 <div class="container" ng-controller="JobController as ctrl">
 	<div class="form-group"></div>
-	Search for a job
+	<h2>Job Details</h2>
 	<p>
 		<input type="text" ng-model="surch_txt">
 	</p>
@@ -9,15 +9,14 @@
 		<fieldset>
 			<legend></legend>
 
-			<p>
-				Id:{{job.jobid}}&nbsp; <a href="#/view_job_details"
-					ng-click="ctrl.getJobDetails(job.jobid)">Get Job Details</a> &nbsp;
-				<button type="button" ng-click="ctrl.applyForJob(job.jobid)"
-					class="btn btn-warning btn-sm">Apply for job</button>
+		<h3>	<p>
+				Id:{{job.jobId}}&nbsp; 
 			</p>
 
 			<p>title:{{job.jobTitle}}</p>
 			<p>Qualification :{{job.skillsRequired}}</p>
+			<p>Salary:{{job.salary}}</p>
+			<p>Location :{{job.location}}</p></h3>
 		</fieldset>
 
 	</div>

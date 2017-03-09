@@ -7,6 +7,10 @@ app.config(function($routeProvider) {
     templateUrl : 'pages/home.html',
     controller  : 'HomeController'
   })
+  .when('/about', {
+    templateUrl : 'pages/about.html',
+    controller  : 'HomeController'
+  })
 .when('/chat', {
     templateUrl : 'chat/chat.html',
     controller  : 'ChatController'
@@ -55,11 +59,15 @@ app.config(function($routeProvider) {
   })
 .when('/post_job', {
     templateUrl : 'job/post_job.html',
-    controller  : 'FriendController'
+    controller  : 'JobController'
   })
   .when('/search_job', {
     templateUrl : 'job/search_job.html',
-    controller  : 'FriendController'
+    controller  : 'JobController'
+  })
+  .when('/view_job_details', {
+    templateUrl : 'job/view_job.html',
+    controller  : 'JobController'
   })
   .otherwise({redirectTo: '/'});
 });

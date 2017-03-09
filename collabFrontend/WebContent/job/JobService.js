@@ -54,11 +54,12 @@ app.service('JobService', [
 				},
 
 				postAJob : function(job) {
-					console.log("   calling reject....in job service//")
+					console.log("   calling postjob....in job service//")
 					return $http
 							.post(BASE_URL + '/postAJob/',job)
 							.then(function(response) {
 								return response.data;
+								
 							},function(errResponse){
 								console.error('Error while posting a job in...sevice..js');
 								return $q.reject(errResponse);

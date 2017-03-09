@@ -32,14 +32,14 @@ public class JobController {
 	
 	
 	
-	@RequestMapping(value="/postJob",method=RequestMethod.POST)
+	@RequestMapping(value="/postAJob/",method=RequestMethod.POST)
 	public ResponseEntity<?> postJob(@RequestBody Job job,HttpSession session){
 		Userdetails user=(Userdetails)session.getAttribute("user");
-		if(user==null){
+		/*if(user==null){
 			Error error=new Error("Unauthorized user.. login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
 		}
-		else{
+		else*/{
 					job.setPostedOn(new Date());
 					jobDao.postJob(job);
 				return new ResponseEntity<Void>(HttpStatus.OK);
@@ -47,16 +47,16 @@ public class JobController {
 	}
 }
 	
-	@RequestMapping(value="/getAllJobs",method=RequestMethod.GET)
+	@RequestMapping(value="/getAllJobs/",method=RequestMethod.GET)
 	public ResponseEntity<?> getAllJobs(HttpSession session){
     	Userdetails user=(Userdetails)session.getAttribute("user");
-    	if(user==null){
+    	/*if(user==null){
     		System.out.println("USER is null");
     		Error error=new Error("Unauthorized user.. login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
-    	}
-    	System.out.println("USER OBJECT " + user.getRole());
-    	List<Job> jobs=jobDao.getAllJobs();
+    	}*/
+/*    	System.out.println("USER OBJECT " + user.getRole());
+*/    	List<Job> jobs=jobDao.getAllJobs();
     	return new ResponseEntity<List<Job>>(jobs,HttpStatus.OK);
     }
 	
@@ -65,11 +65,11 @@ public class JobController {
     public ResponseEntity<?> getJobDetail(@PathVariable(value="jobId")int jobId,
     		HttpSession session){
     	Userdetails user=(Userdetails)session.getAttribute("user");
-    	if(user==null){
+    	/*if(user==null){
     		System.out.println("USER is null");
     		Error error=new Error("Unauthorized user.. login using valid credentials");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401
-    	}
+    	}*/
     	logger.debug("JobId "+ jobId);
     	Job jobDetail=jobDao.getJobDetail(jobId);
     	return new ResponseEntity<Job>(jobDetail,HttpStatus.OK);
